@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<record id="tienda_action" model="ir.actions.act_window">
+        <field name="name">Action tienda</field>
+        <field name="res_model">charcuteria.tienda</field>
+        <field name="view_mode">tree,form</field>
+</record>
+
+<record id="tienda_tree" model="ir.ui.view">
+        <field name="name">tienda.tree</field>
+        <field name="model">charcuteria.tienda</field>
+        <field name="arch" type="xml">
+            <tree string="Tienda">
+                <field name="nombre" />
+				<field name="direccion" />
+                <field name="telefono" />
+                <field name="embutido_id"/>
+            </tree>
+        </field>
+</record>
+
+<record id="tienda_form" model="ir.ui.view">
+        <field name="name">tienda.form</field>
+        <field name="model">charcuteria.tienda</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="nombre" />
+                        <field name="direccion" />
+                        <field name="telefono" />
+                        <field name="embutido_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+</record>
+
+<record id="tienda_menu" model="ir.ui.menu">
+		<field name="name">Tienda</field>
+		<field name="sequence" eval="10"/>
+		<field name="action" ref="tienda_action"/>
+	</record>
+
+<menuitem
+		id="charcuteria"
+		name="Charcuteria"
+		sequence="10" 
+		/>
+
+<menuitem
+		id="tienda_menu"
+		name="Tienda"
+		action ="tienda_action"
+		parent="charcuteria"	
+        />
+
+</odoo>

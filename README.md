@@ -1,3 +1,3 @@
 # SGE-Practica
 
-Modulos de Odoo de prácticas de clase y practica de Saleforce
+Modulos de Odoo de prácticas de clase y práctica de Saleforce
